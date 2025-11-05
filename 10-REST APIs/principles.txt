@@ -1,0 +1,11 @@
+🔹 REST Principles (Key Constraints)
+
+Stateless — Each request is independent; no session data stored on the server.
+
+Client–Server — Separation of frontend (client) and backend (server).
+
+Uniform Interface — Standard structure for requests/responses.
+
+Cacheable — Responses can be cached to improve speed.
+
+Layered System — Intermediate layers (like proxies) can exist.
