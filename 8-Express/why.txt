@@ -1,0 +1,17 @@
+as using nodejs
+we have to manually handle the https method
+also have to import diff modules to handling
+like json,url
+
+node js is a runtimejs environment 
+which allows us to execute to Js on server side
+provides low level modules like
+https
+fs
+url,path,os execute
+
+
+Express is a minimal web appliaction framework 
+built using http module of nodejs 
+
+abstract and simplifies low lvl details

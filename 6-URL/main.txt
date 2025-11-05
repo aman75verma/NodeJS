@@ -1,0 +1,9 @@
+use 
+ping youtube.com 
+on terminal to find IP address 
+
+youtube.com is just a sugarcoating name on an IP address
+
+
+once you have package-lock.json just use npm install
+it will install all dependancies 

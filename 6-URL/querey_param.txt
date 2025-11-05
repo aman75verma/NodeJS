@@ -1,0 +1,7 @@
+amanverma.com/about?userId=1&a=2
+
+syntax
+domain.com/path?key1=value1&key2=value2
+
+eg 
+https://www.google.com/search?q=machine+%3Bearing+random+question&oq=machine+%3Bearing+random+question&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQIRgKGKABMgkIAhAhGAoYoAEyBwgDECEYjwLSAQg2ODI5ajBqMagCALACAA&sourceid=chrome&ie=UTF-8
