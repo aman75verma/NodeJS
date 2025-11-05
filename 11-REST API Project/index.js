@@ -28,17 +28,25 @@ app.get('/api/users/:id' , (req,res) => {
 
 app.post('/api/users' , (req,res) => {
     //todo create a new user
-    return res.json({status : "pending"})
+    //MIDDLEWARE
+    app.use(express.urlencoded({extended : false}))
+    const body = req.body
+    users.push({...body , id : users.length + 1}) 
+
+    const fs = require('fs')
+    fs.writeFile('./MOCK_DATA.json' , JSON.stringify(users) , (err,data) => {
+        return res.json('done new user id is' , users.length)
+    })
 })
 
 
 //---------------------------
-app.route('/api/users').get('/api/users' , (req,res) => {
-    return res.json(users)
-}).post('/api/users' , (req,res) => {
-    //todo create a new user
-    return res.json({status : "pending"})
-})
+// app.router('/api/users').get('/api/users' , (req,res) => {
+//     return res.json(users)
+// }).post('/api/users' , (req,res) => {
+//     //todo create a new user
+//     return res.json({status : "pending"})
+// })
 
 
 app.listen(PORT , ()=>console.log(`Server is running on ${PORT}`))
