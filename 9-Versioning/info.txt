@@ -1,0 +1,37 @@
+"express": "^5.1.0"
+
+1st part = 5
+2nd part = 1
+3rd part = 0
+
+3rd part -- minor/bugs fix(optional)
+
+2nd part -- Latest(1) recommended bug/security fix
+
+see changelogs at open source github repo of ex.js 
+https://github.com/expressjs/express/blob/master/History.md
+
+1st part-- Major/Breaking Release
+everything can be new .. dont update if youre partial code is in previous version
+update if youre developing something by scratch 
+or can go to change logs
+
+
+
+^ -- carrot symbol
+if i update express it will update only 2nd and 3rd part
+npm update express
+if you want to remove this functionality remove cap from package.json
+
+~ this will change only 3rd part. 
+
+
+
+^ carrot symbol is a good practce or just go to npm express and see versions 
+
+
+
+
+https://docs.npmjs.com/cli/v8/configuring-npm/package-json#dependencies
+
+version update documentation
