@@ -1,0 +1,4 @@
+app.get('/user/:userId/book/:bookId', (req, res) => {
+  console.log(req.params)
+  res.send(`User ${req.params.userId} requested book ${req.params.bookId}`)
+})
