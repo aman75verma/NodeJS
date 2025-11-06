@@ -11,13 +11,14 @@ app.use(express.urlencoded({ extended: false }))
 app.get('/users' , (req,res) => {
     const html = `
     <ul>
-       ${users.map((user) => `<li>${user.first_name}</li>`).join('')}
+    ${users.map((user) => `<li>${user.first_name}</li>`).join('')}
     </ul>
     `
     return res.send(html)
 });
 
 app.get('/api/users' , (req,res) => {
+    res.setHeader('x-myname' , 'AmanVerma')
     return res.json(users)
 });
 app.get('/api/users/:id', (req, res) => {
