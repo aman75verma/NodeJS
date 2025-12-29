@@ -1,52 +1,44 @@
-const http = require('http')
-const fs = require('fs')
-const url = require('url')
+const http = require("http");
+const fs = require("fs");
+const url = require("url");
 
-const myserver = http.createServer((req,res) => {
-    // const myUrl = url.parse(req.url)
-    const myUrl = url.parse(req.url , true)
-    if(req.url === '/favicon.ico') return res.end()
-    // const log = `${new Date().toLocaleString()} , ${req.url} : New Request Received\n`
-    const log = `${new Date().toLocaleString()} , ${req.method},${myUrl.pathname} : New Request Received\n`
-    console.log(myUrl)
-    fs.appendFile('./logs.txt' , log , (err,data) => {
-        // switch(req.url){
-        switch(myUrl.pathname){
-            case '/':
-                if(req.method === 'GET') res.end("Homepage")
-                break
-            case '/signup':
-                if(req.method == "GET") res.end('this is a signup form')
-                else if(req.method === "POST") {
-                //db 
-                res.end(Success)
-                }
-                break
-            case '/ContactUs':
-                res.end("ammuaman75@gmail.com")
-                break
-            case '/login':
-                const username = myUrl.query.USERNAME
-                const password = myUrl.query.PASSWORD
-                if(username === 'ammuaman75' && password === 'Tonystark@mark5') res.end(`Hello ${username}, What's up`)
-                // else console.log("WRONG PASSWORD DEAR.. TRY")
-                else res.end("WRONG PASSWORD DEAR.. TRY")
-                break
-            default:
-                res.end("404")
-        }
+const myserver = http.createServer((req, res) => {
+  // //1.Method Check
+  // if(req.method !== "GET"){
+  //     res.statusCode = 405
+  //     return res.end("GET REQUESTS ARE ACCEPTED ONLY")
+  // }
 
-    })
-})
+  //2.Setting Header
+  res.setHeader("Content-type", "text/plain");
 
-myserver.listen(8000, ()=>console.log("Server Started"))
+  //3.Parsing Url
+  const myUrl = url.parse(req.url, true);
+  console.log(myUrl);
+  const { pathname, query } = myUrl; //picking from that above json
 
+  //4. Logs
+  const log = `${new Date().toLocaleString()} , ${
+    myUrl.pathname
+  } : New Req Rcvd\n`;
+  fs.appendFile("new_logs.txt", log, (err) => {
+    if (err) console.error(err);
+  });
 
+  //5.One Route One Response
+  if (pathname === "/") return res.end("Welcome to Home");
+  if (pathname === "/contact") return res.end("ammuaman75@gmail.com");
+  if (pathname === "/login") {
+    if (req.method === "GET") return res.end("This is login page");
+    else {
+      const { username, password } = query; //picking from querey json
+      if (username === "ammuaman75" && password === "aman@123") {
+        return res.end(`Hello ${username}, What's up?`);
+      } else return res.end("Wrong details");
+    }
+  }
+  res.statusCode = 404;
+  return res.end("Route not Found");
+});
 
-// now according to this setup http will not parse if you pass query_params and
-// log it and also will show 404
-// so next
-// install npm url(library) which parse accordingly
-
-
-//now after parsing .. i will use my switch case over myUrl.pathname 
+myserver.listen(8000, () => console.log("Server Started"));
