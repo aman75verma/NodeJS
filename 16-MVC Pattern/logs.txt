@@ -1,0 +1,48 @@
+
+13/01/2026, 9:45:31 am: ::1 GET : /
+
+13/01/2026, 9:46:36 am: ::1 GET : /api/users
+
+13/01/2026, 9:46:37 am: ::1 GET : /api/users
+
+13/01/2026, 9:46:41 am: ::1 GET : /api/user
+
+13/01/2026, 9:49:47 am: ::1 GET : /api/user
+
+13/01/2026, 2:18:42 pm: ::1 POST : /api/user
+
+13/01/2026, 2:18:58 pm: ::1 GET : /
+
+13/01/2026, 2:19:05 pm: ::1 GET : /api/users
+
+13/01/2026, 2:19:06 pm: ::1 GET : /api/users
+
+13/01/2026, 2:19:09 pm: ::1 GET : /api/user
+
+13/01/2026, 2:19:16 pm: ::1 GET : /api/user
+
+13/01/2026, 2:20:34 pm: ::1 GET : /api/user
+
+13/01/2026, 2:20:35 pm: ::1 GET : /api/user
+
+13/01/2026, 2:21:12 pm: ::1 GET : /api/user
+
+13/01/2026, 2:21:12 pm: ::1 GET : /favicon.ico
+
+13/01/2026, 2:21:36 pm: ::1 GET : /api/userm
+
+13/01/2026, 2:22:59 pm: ::1 PATCH : /api/user/1
+
+13/01/2026, 2:23:28 pm: ::1 GET : /api/user
+
+13/01/2026, 2:23:44 pm: ::1 PATCH : /api/user/696606eba6053a334263fb9e
+
+13/01/2026, 2:23:56 pm: ::1 PATCH : /api/user/%22696606eba6053a334263fb9e%22
+
+13/01/2026, 2:27:26 pm: ::1 GET : /api/user/696606eba6053a334263fb9e
+
+13/01/2026, 2:27:41 pm: ::1 PATCH : /api/user/696606eba6053a334263fb9e
+
+13/01/2026, 2:27:53 pm: ::1 HEAD : /api/user/696606eba6053a334263fb9e
+
+13/01/2026, 2:28:08 pm: ::1 GET : /api/user
