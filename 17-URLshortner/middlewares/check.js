@@ -6,10 +6,9 @@ async function alreadyThere(req,res,next){
 
     const originalUrl = body.url;
     const existing = await URL.findOne({redirectUrl: originalUrl});
-    if(existing) return res.status(200).json({
-        success: true,
+    if(existing) return res.render("home", {
         message: "URL already shorten",
-        shortId: existing.shortId
+        existingId: existing.shortId
     });
 
     next();

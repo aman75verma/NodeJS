@@ -1,0 +1,8 @@
+Authentication Pattern --> Statefull and Stateless.
+
+eg Stateful .. Car Parking with adhaar card
+   client gives username & password----
+   server gives back uid
+   now if client sends a req so server will authenticate it by checking uid
+
+   how server gives us uid--cookies(ejs/ssr)--headers/tokens(RestAPI)

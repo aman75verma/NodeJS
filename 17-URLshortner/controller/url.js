@@ -11,7 +11,10 @@ async function generateNewShortUrl(req, res) {
     redirectUrl: body.url,
     visitHistory: [],
   });
-  return res.json({ id: shortId }).status(200);
+  return res.render("home" ,{
+    id : shortId, //sending id to local to render somehow
+  } )
+  // return res.json({ id: shortId }).status(200);
 };
 
 async function numOfClicks(req, res) {

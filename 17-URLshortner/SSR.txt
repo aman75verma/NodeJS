@@ -1,0 +1,4 @@
+we cannot render whole html on frontend side
+like whole css , html and so  on.. it will tough for nodejs to handle it on client side
+there are some backend engines which do ssr and sends to frontend 
+eg ejs(embedded js templating engine), pug , handlebar

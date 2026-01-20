@@ -1,0 +1,9 @@
+<html lang="en">
+<head>
+</head>
+<body>
+    <ol>
+        ${allUrls.map(url => `<li>${url.shortId} - ${url.redirectUrl} - ${url.visitHistory.length}</li>`).join('')}
+    </ol>
+</body>
+</html>
