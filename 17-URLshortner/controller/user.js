@@ -1,8 +1,16 @@
 const User = require('../model/user')
+const {v4: uuidv4} = require('uuid')
+const{ setUser } = require('../service/auth')
 
 
 async function userSignUp(req ,res) {
     const {name , email , password} = req.body
+    exists = await User.findOne({
+        email
+    });
+    if(exists) return res.render('signup' , {
+        error: "User already exists"
+    })
     await User.create({
         name,
         email,
@@ -20,6 +28,10 @@ async function userLogIn(req ,res) {
     if(!user) return res.render('login' , {
         error: "Invalid Username or Password"
     })
+
+    const sessionId = uuidv4();
+    setUser(sessionId,user);
+    res.cookie('uid' , sessionId)
 
     return res.redirect('/');
 }

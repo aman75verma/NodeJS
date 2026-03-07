@@ -7,6 +7,10 @@
 </head>
 <body>
     <h1>Sign Up</h1>
+    <% if (locals.error) { %>
+        <p><%= error %></p>
+     
+    <% } %>
     <form action="/user/signup" method="post">
         <label for="">Full Name</label>
         <input type="name" required name="name">
