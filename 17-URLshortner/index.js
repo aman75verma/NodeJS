@@ -3,6 +3,7 @@ const app = express();
 const PORT = 8001;
 const urlRoute = require("./routes/url");
 const staticRoute = require('./routes/staticRouter') 
+const userRoute = require('./routes/user') 
 const { connectDb } = require("./config");
 const path = require('path')
 
@@ -13,6 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use('/', staticRoute);
 app.use("/api", urlRoute);
+app.use("/user", userRoute);
 //dbConnection
 
 connectDb("mongodb://localhost:27017/urlShortner");
