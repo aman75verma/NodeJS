@@ -1,0 +1,30 @@
+we generated token for user if successfully loggedin.
+Now we have to securely pass on that token to user.
+Why do user need it. - For Authentication purpose
+   like maybe their could be some service on site that can be accessible only if youre loggedin
+
+method 1: Cookies
+after creation of token .. we make a cookie res.cookie('uuid',token)
+we send that cookie to user on that http res 
+client browser stores cookie and next time whenever client req the cookie comes with it
+and then at the server the Authentication process is there
+ whether client has a cookie named uuid
+ if it has than whether uuid == token (jwt.verify(token,secret))
+
+
+
+ what are Cookies
+ domain specific 
+ agar fb.com ne 2 cookies bna ke dedi 
+ to agle bar jab m fb pr req krunga to whi 2 cookies jaaegi
+res.cookie("cookie_name" , cookie-value , domain.-- .google.com , expires , httponlu , path , )
+
+
+method 2: response
+on server side make a token send res.json({token}) and save/send it to user device
+how client will send this as cookie came by itself
+while accessing any api endpoint user will send req.header({token_value: token}) for Authentication
+std way req.header({Authorization:Bearer token}) or by POSTMAN or AJAX/AXIOS
+
+basic bearer outh2
+

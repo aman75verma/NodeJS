@@ -30,8 +30,9 @@ async function userLogIn(req ,res) {
     })
 
     // const sessionId = uuidv4();
-    const token =  setUser(user);
-    res.cookie('uid' , token)
+    const token =  setUser(user); //BY jwt
+    // res.cookie('uid' , token) //by cookie
+    res.json({token})
 
     return res.redirect('/');
 }
